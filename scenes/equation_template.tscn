@@ -26,5 +26,11 @@ theme_override_constants/margin_bottom = 8
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Term" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_4vglh")]
+[node name="Term4" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_4vglh")]
+layout_mode = 2
+
+[node name="Term5" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_4vglh")]
+layout_mode = 2
+
+[node name="Term6" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_4vglh")]
 layout_mode = 2
