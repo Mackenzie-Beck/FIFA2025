@@ -2,7 +2,8 @@ extends PanelContainer
 class_name Term
 
 
-@onready var label: Label = $MarginContainer/Label
+@onready var term_label: Label = $MarginContainer/Label
+
 
 
 signal term_clicked(button: int) 
@@ -15,3 +16,12 @@ func _on_gui_input(event):
 	or event.button_index == MOUSE_BUTTON_RIGHT)\
 	and event.is_pressed():
 		term_clicked.emit(event.button_index)
+
+
+func set_term_text(text : String) -> void:
+	if term_label:
+		term_label.text = text
+	else:
+		# If called before ready, defer the assignment
+		await ready
+		term_label.text = text

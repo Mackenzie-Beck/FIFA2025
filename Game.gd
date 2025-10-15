@@ -1,5 +1,8 @@
 extends Node2D
 
 
-func _on_term_term_clicked(button: int) -> void:
-	print(button)
+@onready var term_interface: Control = $UiControl/term_interface
+
+
+func _ready() -> void:
+	term_interface.set_number_of_terms(QuestionBank.random_question()[1])

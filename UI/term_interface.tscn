@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://od4j47qcwa1u"]
+
+[ext_resource type="PackedScene" uid="uid://ru6bbeux7da8" path="res://UI/equation_template.tscn" id="1_idjym"]
+[ext_resource type="Script" uid="uid://cemjpy4nofsvi" path="res://UI/term_interface.gd" id="1_xrx8h"]
+
+[node name="term_interface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xrx8h")
+
+[node name="EquationTemplate" parent="." instance=ExtResource("1_idjym")]
+layout_mode = 1

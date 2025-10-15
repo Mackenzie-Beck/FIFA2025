@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cyqstfclcc0ku" path="res://Palette_alt.png" id="1_ppyta"]
 [ext_resource type="Texture2D" uid="uid://5h2dpmse3gd3" path="res://Palette.png" id="2_6uqi0"]
 [ext_resource type="Script" uid="uid://cp7s6sg8n625o" path="res://object_layer.gd" id="3_6uqi0"]
-[ext_resource type="PackedScene" uid="uid://duignnm2r588y" path="res://scenes/UIControl.tscn" id="6_g14j6"]
-[ext_resource type="PackedScene" uid="uid://ru6bbeux7da8" path="res://scenes/equation_template.tscn" id="7_vbegm"]
+[ext_resource type="PackedScene" uid="uid://duignnm2r588y" path="res://UI/UIControl.tscn" id="6_g14j6"]
+[ext_resource type="PackedScene" uid="uid://od4j47qcwa1u" path="res://UI/term_interface.tscn" id="7_ehkex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g14j6"]
 texture = ExtResource("1_ppyta")
@@ -185,15 +185,6 @@ zoom = Vector2(2, 2)
 
 [node name="UiControl" parent="." instance=ExtResource("6_g14j6")]
 
-[node name="EquationTemplate" parent="UiControl" instance=ExtResource("7_vbegm")]
-anchors_preset = 2
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 0.0
-anchor_bottom = 1.0
-offset_left = 0.0
-offset_top = -47.0
-offset_right = 285.0
+[node name="term_interface" parent="UiControl" instance=ExtResource("7_ehkex")]
+offset_right = 0.0
 offset_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 0
