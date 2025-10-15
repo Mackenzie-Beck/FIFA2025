@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ldiaikggi1rl" path="res://UI/term.gd" id="1_qut2l"]
 
 [node name="Term" type="PanelContainer"]
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(64, 64)
 offset_right = 35.0
 offset_bottom = 31.0
 size_flags_horizontal = 3
