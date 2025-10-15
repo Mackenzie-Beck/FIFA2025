@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bapulckg3ghva"]
+[gd_scene load_steps=2 format=3 uid="uid://bapulckg3ghva"]
+
+[ext_resource type="Script" uid="uid://4ht7pwgx1l8y" path="res://scenes/term_set.gd" id="1_6w0os"]
 
 [node name="TermSet" type="PanelContainer"]
 anchors_preset = 15
@@ -6,6 +8,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6w0os")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
