@@ -26,4 +26,6 @@ func set_term_set(equation: String, num: int) -> void:
 	for char in equation:
 		tokens.append(char)
 	term_set.update_term_set(tokens, num)
+	for term in term_set.grid_container.get_children():
+		term.term_clicked.connect(_on_term_clicked)
 	
