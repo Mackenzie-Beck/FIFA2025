@@ -7,13 +7,18 @@ extends Control
 @onready var grabbed_term: Term = $GrabbedTerm
 
 
-
+func _ready() -> void:
+	term_set.term_set_updated.connect(_on_term_set_updated)
 
 func _physics_process(delta: float) -> void:
 	if grabbed_term.visible:
 		grabbed_term.global_position = get_global_mouse_position() + Vector2(5,5)
 
-
+func _on_term_set_updated(button: int, term_text : String):
+	match button:
+		1:
+			grabbed_term.visible = !grabbed_term.visible
+			grabbed_term.term_label.text = term_text
 
 func set_equation_template(num : int) -> void:
 	equation_template.num_term_slots = num 
