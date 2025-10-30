@@ -17,9 +17,10 @@ func _physics_process(delta: float) -> void:
 func _on_term_clicked(button: int, term_text) -> void:
 	match button:
 		1:
-			grabbed_term.set_term_text(term_text)
-			grabbed_term.visible = !grabbed_term.visible
-			print(term_text)
+			if grabbed_term.visible == false:
+				grabbed_term.set_term_text(term_text)
+				grabbed_term.visible = !grabbed_term.visible
+				print(term_text)
 		2:
 			print("right click")
 	

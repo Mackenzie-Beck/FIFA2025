@@ -10,7 +10,6 @@ var term_set = [
 ]
 
 
-
 func update_term_set(tokens: Array, num: int) -> void:
 	var shuffled_tokens = tokens.duplicate()
 	shuffled_tokens.shuffle()
