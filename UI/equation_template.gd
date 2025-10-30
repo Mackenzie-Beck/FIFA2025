@@ -5,20 +5,29 @@ const TERM = preload("uid://c3lam4sdf8qcb")
 
 @onready var term_slots: HBoxContainer = $MarginContainer/term_slots
 
+signal equation_template_updated(button: int, term_text : String)
 
 var num_term_slots: int = 0
 
+
+
+
+func _on_term_clicked(index : int, button: int, term_text : String) -> void:
+	print(index, " ", button, " ", term_text)
+	equation_template_updated.emit(button, term_text)
 
 func _ready() -> void:
 	for i in num_term_slots:
 		var new_term = TERM.instantiate()
 		new_term.set_term_text("_")
 		term_slots.add_child(new_term)
+		new_term.term_clicked.connect(_on_term_clicked)
 		
 
 
-func update_term_slots() -> void:
+func set_term_slots() -> void:
 	for i in num_term_slots:
 		var new_term = TERM.instantiate()
 		new_term.set_term_text("_")
 		term_slots.add_child(new_term)
+		new_term.term_clicked.connect(_on_term_clicked)
