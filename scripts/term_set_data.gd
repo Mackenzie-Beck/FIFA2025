@@ -1,9 +1,9 @@
 extends Node
-class_name TermSet
+class_name TermSetData
 
 
-signal term_set_updated(term_set : TermSet)
-signal term_set_interact(term_set: TermSet, index: int, button: int)
+signal term_set_updated(term_set_data : TermSetData)
+signal term_set_interact(term_set_data: TermSetData, index: int, button: int)
 
 @export var term_datas: Array[TermData]
 
