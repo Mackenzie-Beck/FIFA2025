@@ -24,20 +24,25 @@ func _equation_template_updated(index: int, button: int, term_text : String):
 				if grabbed_term.visible:
 					equation_template.term_slots.get_child(index).set_term_text(grabbed_term.term_label.text)
 					grabbed_term.visible = !grabbed_term.visible
-					#grab term from equation template 
-				elif !grabbed_term.visible and equation_template.term_slots.get_child(index).term_label.text != "_":
-
+				#grab term from equation template 
+				elif !grabbed_term.visible and equation_template.term_slots.get_child(index).term_label.text != "___":
 					grabbed_term.visible = !grabbed_term.visible
 					grabbed_term.term_label.text = term_text
-					equation_template.set_term_slot(index, "_")
+					equation_template.set_term_slot(index, "___")
 				
 				
-func _on_term_set_updated(button: int, term_text : String):
+func _on_term_set_updated(index:int, button: int, term_text : String):
 	match button:
 		1:
-			grabbed_term.visible = !grabbed_term.visible
-			grabbed_term.term_label.text = term_text
-
+			if !grabbed_term.visible:
+				grabbed_term.visible = !grabbed_term.visible
+				grabbed_term.term_label.text = term_text
+				term_set.set_term_slot(index, "___")
+				#player should not be able to place a term when there is another number in that slot
+			elif grabbed_term.visible and term_text == "___":
+				grabbed_term.visible = !grabbed_term.visible
+				term_set.set_term_slot(index, grabbed_term.term_label.text)
+				
 
 
 

@@ -18,7 +18,7 @@ func _on_term_clicked(index : int, button: int, term_text : String) -> void:
 func _ready() -> void:
 	for i in num_term_slots:
 		var new_term = TERM.instantiate()
-		new_term.set_term_text("_")
+		new_term.set_term_text("___")
 		term_slots.add_child(new_term)
 		new_term.term_clicked.connect(_on_term_clicked)
 		
@@ -27,7 +27,7 @@ func _ready() -> void:
 func set_term_slots() -> void:
 	for i in num_term_slots:
 		var new_term = TERM.instantiate()
-		new_term.set_term_text("_")
+		new_term.set_term_text("___")
 		term_slots.add_child(new_term)
 		new_term.term_clicked.connect(_on_term_clicked)
 
