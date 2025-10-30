@@ -14,13 +14,13 @@ func _physics_process(delta: float) -> void:
 		grabbed_term.global_position = get_global_mouse_position() + Vector2(5,5)
 
 
-func _on_term_clicked(button: int, term_text) -> void:
+func _on_term_clicked(index : int, button: int, term_text) -> void:
 	match button:
 		1:
 			if grabbed_term.visible == false:
 				grabbed_term.set_term_text(term_text)
 				grabbed_term.visible = !grabbed_term.visible
-				print(term_text)
+				#print(index , " ", term_text)
 		2:
 			print("right click")
 	
