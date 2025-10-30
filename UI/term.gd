@@ -6,7 +6,7 @@ class_name Term
 
 
 
-signal term_clicked(button: int, term_text : String) 
+signal term_clicked(index : int, button: int, term_text : String) 
 # signal to emit when this term is clicked, inlcude the button mask to allow for right clicks (not sure what purpose)
 
 
@@ -15,7 +15,7 @@ func _on_gui_input(event):
 	and (event.button_index == MOUSE_BUTTON_LEFT\
 	or event.button_index == MOUSE_BUTTON_RIGHT)\
 	and event.is_pressed():
-		term_clicked.emit(event.button_index, term_label.text)
+		term_clicked.emit(get_index(), event.button_index, term_label.text)
 
 
 func set_term_text(text : String) -> void:

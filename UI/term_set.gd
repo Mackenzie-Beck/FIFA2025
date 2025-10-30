@@ -4,13 +4,18 @@ extends PanelContainer
 const TERM = preload("uid://c3lam4sdf8qcb")
 @onready var grid_container: GridContainer = $MarginContainer/GridContainer
 
+
+
+
 var term_set = [
 	"0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
 	"+", "-", "*", "=",
 ]
 
+func _on_term_clicked(index : int, button: int, term_text : String) -> void:
+	print(index, " ", button, " ", term_text)
 
-func update_term_set(tokens: Array, num: int) -> void:
+func set_term_set(tokens: Array, num: int) -> void:
 	var shuffled_tokens = tokens.duplicate()
 	shuffled_tokens.shuffle()
 	
@@ -18,6 +23,7 @@ func update_term_set(tokens: Array, num: int) -> void:
 		var new_term = TERM.instantiate()
 		new_term.set_term_text(token)
 		grid_container.add_child(new_term)
+		new_term.term_clicked.connect(_on_term_clicked)
 		
 	for temp in range(0,tokens.size()):
 		var new_term = TERM.instantiate()

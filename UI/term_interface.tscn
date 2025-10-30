@@ -32,3 +32,5 @@ grow_vertical = 0
 [node name="GrabbedTerm" parent="." instance=ExtResource("4_efsp5")]
 visible = false
 layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
