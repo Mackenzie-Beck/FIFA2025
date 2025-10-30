@@ -5,7 +5,7 @@ const TERM = preload("uid://c3lam4sdf8qcb")
 
 @onready var term_slots: HBoxContainer = $MarginContainer/term_slots
 
-signal equation_template_updated(button: int, term_text : String)
+signal equation_template_updated(index: int, button: int, term_text : String)
 
 var num_term_slots: int = 0
 
@@ -13,8 +13,7 @@ var num_term_slots: int = 0
 
 
 func _on_term_clicked(index : int, button: int, term_text : String) -> void:
-	print(index, " ", button, " ", term_text)
-	equation_template_updated.emit(button, term_text)
+	equation_template_updated.emit(index, button, term_text)
 
 func _ready() -> void:
 	for i in num_term_slots:
