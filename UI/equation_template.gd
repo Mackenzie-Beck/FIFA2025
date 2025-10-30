@@ -30,3 +30,7 @@ func set_term_slots() -> void:
 		new_term.set_term_text("_")
 		term_slots.add_child(new_term)
 		new_term.term_clicked.connect(_on_term_clicked)
+
+func set_term_slot(index : int, term_text: String) -> void:
+	term_slots.get_child(index).set_term_text(term_text)
+	
