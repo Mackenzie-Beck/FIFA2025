@@ -22,6 +22,13 @@ func initialize_game_world(equation :String):
 	var player_x_coord = Utils.rng.randi_range(-1,1)
 	var goal_offset = Utils.rng.randi_range(-1,1)
 	
+	#print("expression : ", cleaned_equation)
+	#print("player x coord: ", player_x_coord, " goal offset: ", goal_offset)
+	#
+	#print("player coords: ", Vector2(player_x_coord, -expression.execute([player_x_coord])))
+	#
+	#print("goal coords: ", Vector2((player_x_coord+goal_offset), -expression.execute([player_x_coord+goal_offset]) ) )
+	
 	
 	set_player_coords(Vector2(player_x_coord, -expression.execute([player_x_coord])))
 	set_goal_coords(Vector2((player_x_coord+goal_offset), -expression.execute([player_x_coord+goal_offset]) ) )
