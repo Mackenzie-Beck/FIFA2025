@@ -20,11 +20,6 @@ func set_term_set(tokens: Array, num: int) -> void:
 	var shuffled_tokens = tokens.duplicate()
 	shuffled_tokens.shuffle()
 	
-	# clean shuffled tokens of any * symbols
-	for token in shuffled_tokens:
-		if token == "*":
-			shuffled_tokens.erase(token)
-	
 	for token in shuffled_tokens:
 		var new_term = TERM.instantiate()
 		new_term.set_term_text(token)

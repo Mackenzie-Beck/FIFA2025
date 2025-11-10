@@ -25,6 +25,30 @@ func _physics_process(delta: float) -> void:
 		grabbed_term.global_position = get_global_mouse_position() + Vector2(5,5)
 
 
+func tokenize_equation(equation: String) -> Array:
+	var tokens = []
+	var current_token = ""
+	
+	for i in range(equation.length()):
+		var char = equation[i]
+		
+		# If it's a digit, accumulate it
+		if char.is_valid_int():
+			current_token += char
+		else:
+			# If we have accumulated digits, add them as a token
+			if current_token != "":
+				tokens.append(current_token)
+				current_token = ""
+			
+			# Add the current character (operator, variable, etc.)
+			tokens.append(char)
+	
+	# last token if equation ends with number
+	if current_token != "":
+		tokens.append(current_token)
+	
+	return tokens
 
 func _equation_template_updated(index: int, button: int, term_text : String):
 		match button:
@@ -62,29 +86,20 @@ func check_equation_correct():
 	elif equation_template.get_empty_term_slots() == 0:
 		equation_is_false.emit()
 
-func set_equation_template(equation : String, num : int) -> void:
-	var tmp_string : String
-	var tokens = []
+func set_equation_template(equation: String, num: int) -> void:
+	var tokens = tokenize_equation(equation)
+	var tmp_string = ""
 	
-	#remove characters unneccesary for display
-	for char in equation:
-		if char != "*":
-			tokens.append(char)
-	#convert tokens to string
 	for token in tokens:
-		tmp_string = tmp_string + token
-		
+		tmp_string += token
+	
+	#print(tokens)
 	set_correct_equation(tmp_string)
 	equation_template.num_term_slots = num 
 	equation_template.set_term_slots()
-
 	
-
-
 func set_term_set(equation: String, num: int) -> void:
-	var tokens = []
-	for char in equation:
-		tokens.append(char)
+	var tokens = tokenize_equation(equation)
 	term_set.set_term_set(tokens, num)
 
 func set_correct_equation(string : String):
