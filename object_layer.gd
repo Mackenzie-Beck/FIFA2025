@@ -13,3 +13,15 @@ func _ready() -> void:
 	set_cell(goal_coords,1,  goal_sprite_atlas_coords)
 	#print(get_cell_tile_data(Vector2(0,0)))
 	#print(QuestionBank.random_question())
+	
+func initialize_game_world(equation :String):
+	var cleaned_equation = equation.substr(2)
+	var expression = Expression.new()
+	expression.parse(cleaned_equation, ["x"])
+
+	
+func set_player_coords(coords : Vector2):
+	pass
+	
+func set_goal_coords(coords : Vector2):
+	pass
