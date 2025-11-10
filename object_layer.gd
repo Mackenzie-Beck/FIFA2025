@@ -8,20 +8,40 @@ extends TileMapLayer
 @export var goal_coords : Vector2 = Vector2(10,-10)
 
 
-func _ready() -> void:
-	set_cell(player_coords, 1, player_sprite_atlas_coords)
-	set_cell(goal_coords,1,  goal_sprite_atlas_coords)
-	#print(get_cell_tile_data(Vector2(0,0)))
-	#print(QuestionBank.random_question())
+
 	
 func initialize_game_world(equation :String):
 	var cleaned_equation = equation.substr(2)
+	
+	
+	
 	var expression = Expression.new()
 	expression.parse(cleaned_equation, ["x"])
+	
+	var player_x_coord = Utils.rng.randi_range(-1,1)
+	var goal_offset = Utils.rng.randi_range(-1,1)
+	
+	print(cleaned_equation)
+	print("player x coord ", player_x_coord)
+	print("goal offset ", goal_offset)
 
+	print("player coords")
+	print(Vector2(player_x_coord, expression.execute([player_x_coord])))
+	
+	
+	print("Goal coords")
+	print(Vector2((player_x_coord+goal_offset), expression.execute([player_x_coord+goal_offset]) ))
+	
+	set_player_coords(Vector2(player_x_coord, -expression.execute([player_x_coord])))
+	
+	set_goal_coords(Vector2((player_x_coord+goal_offset), -expression.execute([player_x_coord+goal_offset]) ) )
 	
 func set_player_coords(coords : Vector2):
-	pass
+	player_coords = coords
+	set_cell(player_coords, 1, player_sprite_atlas_coords)
 	
 func set_goal_coords(coords : Vector2):
-	pass
+	goal_coords = coords
+	set_cell(goal_coords,1,  goal_sprite_atlas_coords)
+
+	
