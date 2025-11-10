@@ -25,3 +25,6 @@ func set_term_text(text : String) -> void:
 		# If called before ready, defer the assignment
 		await ready
 		term_label.text = text
+
+func get_term_text() -> String:
+	return term_label.text

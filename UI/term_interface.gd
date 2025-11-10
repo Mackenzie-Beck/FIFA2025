@@ -10,6 +10,7 @@ var correct_equation : String
 
 
 func _ready() -> void:
+
 	term_set.term_set_updated.connect(_on_term_set_updated)
 	equation_template.equation_template_updated.connect(_equation_template_updated)
 
@@ -50,7 +51,10 @@ func _on_term_set_updated(index:int, button: int, term_text : String):
 				
 
 func check_equation_correct():
-	pass
+	if equation_template.get_equation() == correct_equation:
+		print(true)
+	else:
+		print(false)
 
 func set_equation_template(equation : String, num : int) -> void:
 	var tmp_string : String
@@ -79,3 +83,4 @@ func set_term_set(equation: String, num: int) -> void:
 
 func set_correct_equation(string : String):
 	correct_equation = string
+	print(correct_equation)
