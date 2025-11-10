@@ -6,6 +6,8 @@ extends Control
 @onready var term_set: PanelContainer = $TermSet
 @onready var grabbed_term: Term = $GrabbedTerm
 
+var correct_equation : String
+
 
 func _ready() -> void:
 	term_set.term_set_updated.connect(_on_term_set_updated)
@@ -29,6 +31,9 @@ func _equation_template_updated(index: int, button: int, term_text : String):
 					grabbed_term.visible = !grabbed_term.visible
 					grabbed_term.term_label.text = term_text
 					equation_template.set_term_slot(index, "___")
+					
+					
+		check_equation_correct()
 				
 				
 func _on_term_set_updated(index:int, button: int, term_text : String):
@@ -44,11 +49,26 @@ func _on_term_set_updated(index:int, button: int, term_text : String):
 				term_set.set_term_slot(index, grabbed_term.term_label.text)
 				
 
+func check_equation_correct():
+	pass
 
-
-func set_equation_template(num : int) -> void:
+func set_equation_template(equation : String, num : int) -> void:
+	var tmp_string : String
+	var tokens = []
+	
+	#remove characters unneccesary for display
+	for char in equation:
+		if char != "*":
+			tokens.append(char)
+	#convert tokens to string
+	for token in tokens:
+		tmp_string = tmp_string + token
+		
+	set_correct_equation(tmp_string)
 	equation_template.num_term_slots = num 
 	equation_template.set_term_slots()
+
+	
 
 
 func set_term_set(equation: String, num: int) -> void:
@@ -57,4 +77,5 @@ func set_term_set(equation: String, num: int) -> void:
 		tokens.append(char)
 	term_set.set_term_set(tokens, num)
 
-	
+func set_correct_equation(string : String):
+	correct_equation = string
