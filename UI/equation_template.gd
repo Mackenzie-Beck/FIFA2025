@@ -3,7 +3,8 @@ class_name EquationTemplate
 
 const TERM = preload("uid://c3lam4sdf8qcb")
 
-@onready var term_slots: HBoxContainer = $MarginContainer/term_slots
+@onready var term_slots: HBoxContainer = $VBoxContainer/MarginContainer/term_slots
+@onready var correct_label: Label = $VBoxContainer/correct_label
 
 signal equation_template_updated(index: int, button: int, term_text : String)
 
@@ -42,3 +43,11 @@ func get_equation() -> String:
 		equation = equation + term.get_term_text()
 	
 	return equation
+
+func get_empty_term_slots() -> int:
+	var tmp_int = 0
+	for term in term_slots.get_children():
+		if term.get_term_text() == "___":
+			tmp_int += 1
+			
+	return tmp_int

@@ -8,6 +8,7 @@ extends Control
 
 var correct_equation : String
 
+signal equation_is_correct
 
 func _ready() -> void:
 
@@ -52,8 +53,8 @@ func _on_term_set_updated(index:int, button: int, term_text : String):
 
 func check_equation_correct():
 	if equation_template.get_equation() == correct_equation:
-		print(true)
-	else:
+		equation_is_correct.emit()
+	elif equation_template.get_empty_term_slots() == 0:
 		print(false)
 
 func set_equation_template(equation : String, num : int) -> void:
