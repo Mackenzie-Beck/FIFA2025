@@ -25,6 +25,17 @@ func _ready() -> void:
 func _on_term_clicked(index : int, button: int, term_text : String) -> void:
 	equation_template_updated.emit(index, button, term_text)
 
+func _on_equation_is_correct():
+	correct_label.text = "Correct!"
+	correct_label.show()
+	await get_tree().create_timer(3.0).timeout
+	correct_label.hide()
+	
+func _on_equation_is_false():
+	correct_label.text = "Wrong!"
+	correct_label.show()
+	await get_tree().create_timer(3.0).timeout
+	correct_label.hide()
 
 func set_term_slots() -> void:
 	for i in num_term_slots:

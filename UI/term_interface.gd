@@ -9,9 +9,14 @@ extends Control
 var correct_equation : String
 
 signal equation_is_correct
+signal equation_is_false
 
 func _ready() -> void:
-
+	
+	# connect signals 
+	equation_is_correct.connect(equation_template._on_equation_is_correct)
+	equation_is_false.connect(equation_template._on_equation_is_false)
+	
 	term_set.term_set_updated.connect(_on_term_set_updated)
 	equation_template.equation_template_updated.connect(_equation_template_updated)
 
@@ -55,7 +60,7 @@ func check_equation_correct():
 	if equation_template.get_equation() == correct_equation:
 		equation_is_correct.emit()
 	elif equation_template.get_empty_term_slots() == 0:
-		print(false)
+		equation_is_false.emit()
 
 func set_equation_template(equation : String, num : int) -> void:
 	var tmp_string : String
@@ -84,4 +89,5 @@ func set_term_set(equation: String, num: int) -> void:
 
 func set_correct_equation(string : String):
 	correct_equation = string
+	print("set_correct_equation in equation_template.gd")
 	print(correct_equation)
