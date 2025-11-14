@@ -11,5 +11,17 @@ extends TileMapLayer
 func _ready() -> void:
 	set_cell(player_coords, 1, player_sprite_atlas_coords)
 	set_cell(goal_coords,1,  goal_sprite_atlas_coords)
+	draw_line_on_grid()
 	#print(get_cell_tile_data(Vector2(0,0)))
 	#print(QuestionBank.random_question())
+
+
+func draw_line_on_grid() -> void:
+	print(player_coords)
+	print(goal_coords)
+	var line = Line2D.new()
+	line.add_point(player_coords)
+	line.add_point(goal_coords)
+	line.width = 2
+	line.default_color = Color.RED
+	add_child(line)
