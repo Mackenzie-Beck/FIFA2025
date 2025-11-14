@@ -96,8 +96,8 @@ func draw_line_on_grid(equation : String) -> void:
 	var line = Line2D.new()
 	
 	# Define the range of x values you want to plot
-	var x_start = -10  # Adjust based on your grid
-	var x_end = 10
+	var x_start = -30  # Adjust based on your grid
+	var x_end = 30
 	var step = 1  # Smaller step = smoother line
 
 
