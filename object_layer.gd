@@ -52,14 +52,19 @@ func set_goal_coords(coords : Vector2):
 
 func draw_line_on_grid(equation : String) -> void:
 	print("Current equation: ", equation)
-	
-	var cleaned_equation = equation.substr(2)
 	# generate expression from the question bank and calculate values for coordiantes
 	var expression = Expression.new()
 	
-	
-	var error = expression.parse(cleaned_equation, ["x"])
-	print(error)
+	# check if the left had side of equaiton is correct
+	var equation_start = equation.substr(0,2)
+	if equation_start != "y=":
+		print("equation dont start right")
+		return
+		
+	var cleaned_equation = equation.substr(2)
+	print(cleaned_equation)
+	var error = expression.parse(cleaned_equation)
+
 	if error != 0:
 		print("Invalid equation format!")
 		print("Error: ", expression.get_error_text())
@@ -67,7 +72,6 @@ func draw_line_on_grid(equation : String) -> void:
 	
 	# If we get here, the equation is valid
 	print("Equation is valid!")
-	
 	
 	# this function should draw a line according to the equation made by the player
 	#var line = Line2D.new()

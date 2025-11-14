@@ -55,12 +55,10 @@ func _equation_template_updated(index: int, button: int, term_text : String):
 			1:
 				#put term from term set into equation template
 				if grabbed_term.visible and equation_template.term_slots.get_child(index).term_label.text == "___":
-					print("test1")
 					equation_template.term_slots.get_child(index).set_term_text(grabbed_term.term_label.text)
 					grabbed_term.visible = !grabbed_term.visible
 				# replace a term with another
 				elif grabbed_term.visible and equation_template.term_slots.get_child(index).term_label.text != "___":
-					print("test")
 					var tmptext = term_text
 					equation_template.term_slots.get_child(index).set_term_text(grabbed_term.term_label.text)
 					grabbed_term.term_label.text = tmptext
