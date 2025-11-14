@@ -51,6 +51,15 @@ func set_goal_coords(coords : Vector2):
 
 
 func draw_line_on_grid(equation : String) -> void:
+	
+	# clean any lines
+	for child in get_children():
+		if child is Line2D:
+			print(child)
+			child.queue_free()
+			
+			
+			
 	print("Current equation: ", equation)
 	# generate expression from the question bank and calculate values for coordiantes
 	var expression = Expression.new()
@@ -58,12 +67,21 @@ func draw_line_on_grid(equation : String) -> void:
 	# check if the left had side of equaiton is correct
 	var equation_start = equation.substr(0,2)
 	if equation_start != "y=":
-		print("equation dont start right")
+		print("left hand side of equation is wrong")
 		return
 		
 	var cleaned_equation = equation.substr(2)
-	print(cleaned_equation)
-	var error = expression.parse(cleaned_equation)
+	
+		# Remove all _ characters
+	var result = ""
+	for i in range(cleaned_equation.length()):
+		var char = cleaned_equation[i]
+		if char != "_":
+			result += char
+	cleaned_equation = result
+	#print("Cleaned equation: '", cleaned_equation, "'")  # Debug print
+	
+	var error = expression.parse(cleaned_equation, ['x'])
 
 	if error != 0:
 		print("Invalid equation format!")
@@ -71,12 +89,29 @@ func draw_line_on_grid(equation : String) -> void:
 		return
 	
 	# If we get here, the equation is valid
-	print("Equation is valid!")
+	#print("Equation is valid!")
 	
 	# this function should draw a line according to the equation made by the player
-	#var line = Line2D.new()
-	#line.add_point(map_to_local(player_coords))
-	#line.add_point(map_to_local(goal_coords))
-	#line.width = 2
-	#line.default_color = Color.RED
-	#add_child(line)
+	# Generate points along the line
+	var line = Line2D.new()
+	
+	# Define the range of x values you want to plot
+	var x_start = -10  # Adjust based on your grid
+	var x_end = 10
+	var step = 1  # Smaller step = smoother line
+
+
+	# Calculate y for each x and add points
+	for x in range(x_start, x_end + step, step):
+		var y = -expression.execute([x])
+		if expression.has_execute_failed():
+			print("Execution failed at x=", x, ": ", expression.get_error_text())
+			continue
+		
+		# Convert to screen/grid coordinates
+		var point = Vector2(x, y)
+		line.add_point(map_to_local(point))  
+	
+	line.width = 2
+	line.default_color = Color.RED
+	add_child(line)
