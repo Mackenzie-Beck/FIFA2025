@@ -10,13 +10,16 @@ var correct_equation : String
 
 signal equation_is_correct
 signal equation_is_false
+signal update_equation(equation : String)
+
+
 
 func _ready() -> void:
 	
 	# connect signals 
 	equation_is_correct.connect(equation_template._on_equation_is_correct)
 	equation_is_false.connect(equation_template._on_equation_is_false)
-	
+	equation_template.skip_current_equation.connect(skip_equation)
 	term_set.term_set_updated.connect(_on_term_set_updated)
 	equation_template.equation_template_updated.connect(_equation_template_updated)
 
@@ -90,6 +93,8 @@ func _on_term_set_updated(index:int, button: int, term_text : String):
 func check_equation_correct():
 	if equation_template.get_equation() == correct_equation:
 		equation_is_correct.emit()
+		await get_tree().create_timer(3.0).timeout
+		new_question()
 	elif equation_template.get_empty_term_slots() == 0:
 		equation_is_false.emit()
 
@@ -113,3 +118,13 @@ func set_correct_equation(string : String):
 	correct_equation = string
 	print("set_correct_equation in equation_template.gd")
 	print(correct_equation)
+
+func skip_equation():
+	new_question()
+
+func new_question():
+	var question = QuestionBank.random_question()
+	set_term_set(question[0], question[1])
+	set_equation_template(question[0], question[1])
+	update_equation.emit(question[0])
+	

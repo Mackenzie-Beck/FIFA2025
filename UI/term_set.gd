@@ -17,6 +17,7 @@ func _on_term_clicked(index : int, button: int, term_text : String) -> void:
 	term_set_updated.emit(index, button, term_text)
 
 func set_term_set(tokens: Array, num: int) -> void:
+	clear_term_set()
 	var shuffled_tokens = tokens.duplicate()
 	shuffled_tokens.shuffle()
 	
@@ -31,6 +32,10 @@ func set_term_set(tokens: Array, num: int) -> void:
 		new_term.set_term_text(term_set.pick_random())
 		term_container.add_child(new_term)
 		new_term.term_clicked.connect(_on_term_clicked)
+
+func clear_term_set():
+	for term in term_container.get_children():
+		term.queue_free()
 
 
 func set_term_slot(index : int, term_text: String) -> void:

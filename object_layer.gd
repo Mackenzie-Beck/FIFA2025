@@ -11,6 +11,8 @@ extends TileMapLayer
 
 	
 func initialize_game_world(equation :String):
+
+	
 	# clear the y= from the string so it fits the expression
 	var cleaned_equation = equation.substr(2)
 	
@@ -49,25 +51,28 @@ func set_goal_coords(coords : Vector2):
 	#print(get_cell_tile_data(Vector2(0,0)))
 	#print(QuestionBank.random_question())
 
-
-func draw_line_on_grid(equation : String) -> void:
-	
-	# clean any lines
+func clear_lines_on_grid():
+		# clean any lines
 	for child in get_children():
 		if child is Line2D:
 			print(child)
 			child.queue_free()
+
+func draw_line_on_grid(equation : String) -> void:
+	
+	# clean any lines
+	clear_lines_on_grid()
 			
 			
 			
-	print("Current equation: ", equation)
+	#print("Current equation: ", equation)
 	# generate expression from the question bank and calculate values for coordiantes
 	var expression = Expression.new()
 	
 	# check if the left had side of equaiton is correct
 	var equation_start = equation.substr(0,2)
 	if equation_start != "y=":
-		print("left hand side of equation is wrong")
+		#print("left hand side of equation is wrong")
 		return
 		
 	var cleaned_equation = equation.substr(2)
@@ -115,3 +120,15 @@ func draw_line_on_grid(equation : String) -> void:
 	line.width = 2
 	line.default_color = Color.RED
 	add_child(line)
+
+
+func clear_board_state():
+	clear_lines_on_grid()
+	#player
+	set_cell(player_coords, -1)
+	#goal
+	set_cell(goal_coords, -1)
+
+func _on_update_equation(equation :String):
+	clear_board_state()
+	initialize_game_world(equation)

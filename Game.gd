@@ -6,6 +6,9 @@ extends Node2D
 
 
 func _ready() -> void:
+	# connect signals
+	term_interface.update_equation.connect(object_layer._on_update_equation)
+	
 	var question = QuestionBank.random_question()
 	term_interface.set_term_set(question[0], question[1])
 	term_interface.set_equation_template(question[0], question[1])
