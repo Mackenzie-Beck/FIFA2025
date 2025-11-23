@@ -116,8 +116,7 @@ func set_term_set(equation: String, num: int) -> void:
 
 func set_correct_equation(string : String):
 	correct_equation = string
-	print("set_correct_equation in equation_template.gd")
-	print(correct_equation)
+	print("set_correct_equation in equation_template.gd: ", correct_equation)
 
 func skip_equation():
 	new_question()
@@ -126,5 +125,6 @@ func new_question():
 	var question = QuestionBank.random_question()
 	set_term_set(question[0], question[1])
 	set_equation_template(question[0], question[1])
+	print(correct_equation)
 	update_equation.emit(question[0])
 	

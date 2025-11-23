@@ -11,7 +11,7 @@ extends TileMapLayer
 
 	
 func initialize_game_world(equation :String):
-
+	print("equaiton in initialize game world: ", equation)
 	
 	# clear the y= from the string so it fits the expression
 	var cleaned_equation = equation.substr(2)
