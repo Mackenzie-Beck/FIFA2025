@@ -188,3 +188,5 @@ zoom = Vector2(2, 2)
 [node name="term_interface" parent="UiControl" instance=ExtResource("7_ehkex")]
 offset_right = 0.0
 offset_bottom = 0.0
+
+[editable path="UiControl/term_interface"]

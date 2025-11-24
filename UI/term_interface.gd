@@ -5,7 +5,8 @@ extends Control
 @onready var equation_template: EquationTemplate = $EquationTemplate
 @onready var term_set: PanelContainer = $TermSet
 @onready var grabbed_term: Term = $GrabbedTerm
-@onready var points: Label = $PanelContainer/Points
+@onready var points: Label = $PanelContainer/VBoxContainer/Points
+
 
 var correct_equation : String
 
@@ -91,6 +92,9 @@ func _on_term_set_updated(index:int, button: int, term_text : String):
 				grabbed_term.visible = !grabbed_term.visible
 				term_set.set_term_slot(index, grabbed_term.term_label.text)
 				
+
+func is_equation_correct() -> bool:
+	return equation_template.get_equation() == correct_equation
 
 func check_equation_correct():
 	if equation_template.get_equation() == correct_equation:

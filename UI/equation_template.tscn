@@ -18,7 +18,7 @@ layout_mode = 2
 [node name="SkipButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 5
-text = "Skip"
+text = "Skip (Costs 2 points)"
 
 [node name="correct_label" type="Label" parent="VBoxContainer"]
 layout_mode = 2

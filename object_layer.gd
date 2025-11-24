@@ -11,7 +11,7 @@ extends TileMapLayer
 
 	
 func initialize_game_world(equation :String):
-	print("equaiton in initialize game world: ", equation)
+	print("equation in initialize game world: ", equation)
 	
 	# clear the y= from the string so it fits the expression
 	var cleaned_equation = equation.substr(2)
@@ -118,7 +118,10 @@ func draw_line_on_grid(equation : String) -> void:
 		line.add_point(map_to_local(point))  
 	
 	line.width = 2
-	line.default_color = Color.RED
+	if get_parent().is_equation_correct():
+		line.default_color = Color.WEB_GREEN
+	else:
+		line.default_color = Color.DARK_RED
 	add_child(line)
 
 
