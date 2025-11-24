@@ -1,6 +1,7 @@
 extends Node
 
-
+# Global Variables
+var points : int = 0
 
 
 var rng = RandomNumberGenerator.new()

@@ -5,6 +5,7 @@ extends Control
 @onready var equation_template: EquationTemplate = $EquationTemplate
 @onready var term_set: PanelContainer = $TermSet
 @onready var grabbed_term: Term = $GrabbedTerm
+@onready var points: Label = $PanelContainer/Points
 
 var correct_equation : String
 
@@ -18,6 +19,7 @@ func _ready() -> void:
 	
 	# connect signals 
 	equation_is_correct.connect(equation_template._on_equation_is_correct)
+	equation_is_correct.connect(_on_equation_is_correct)
 	equation_is_false.connect(equation_template._on_equation_is_false)
 	equation_template.skip_current_equation.connect(skip_equation)
 	term_set.term_set_updated.connect(_on_term_set_updated)
@@ -98,6 +100,10 @@ func check_equation_correct():
 	elif equation_template.get_empty_term_slots() == 0:
 		equation_is_false.emit()
 
+func _on_equation_is_correct():
+	Utils.points += 1
+	points.text = str(Utils.points)
+
 func set_equation_template(equation: String, num: int) -> void:
 	var tokens = tokenize_equation(equation)
 	var tmp_string = ""
@@ -119,7 +125,13 @@ func set_correct_equation(string : String):
 	print("set_correct_equation in equation_template.gd: ", correct_equation)
 
 func skip_equation():
-	new_question()
+	if Utils.points <= 1:
+		return
+	else:
+		Utils.points -= 2
+		points.text = str(Utils.points)
+		new_question()
+	
 
 func new_question():
 	var question = QuestionBank.random_question()
