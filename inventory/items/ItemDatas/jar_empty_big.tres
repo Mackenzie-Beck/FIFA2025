@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://g60sb17jm7ss"]
+
+[ext_resource type="Script" uid="uid://dlcjqlliw4ngk" path="res://Systems/inventory/items/item_data.gd" id="1_4afhu"]
+[ext_resource type="Texture2D" uid="uid://dnya2jpsn36w3" path="res://Systems/inventory/items/test_items.png" id="2_q5jls"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvexn"]
+atlas = ExtResource("2_q5jls")
+region = Rect2(96, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_4afhu")
+name = "Large Jar"
+description = "A prodigious amount of liquid "
+stackable = false
+texture = SubResource("AtlasTexture_qvexn")

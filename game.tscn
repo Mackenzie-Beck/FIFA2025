@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dho3caqnqcfoe"]
+[gd_scene load_steps=18 format=4 uid="uid://dho3caqnqcfoe"]
 
 [ext_resource type="Texture2D" uid="uid://cdqinggdu1oy1" path="res://SpriteSheet.png" id="1_8uh7m"]
 [ext_resource type="Script" uid="uid://dye5di3bv3jcr" path="res://Game.gd" id="1_g14j6"]
@@ -7,6 +7,10 @@
 [ext_resource type="Script" uid="uid://cp7s6sg8n625o" path="res://object_layer.gd" id="3_6uqi0"]
 [ext_resource type="PackedScene" uid="uid://duignnm2r588y" path="res://UI/UIControl.tscn" id="6_g14j6"]
 [ext_resource type="PackedScene" uid="uid://od4j47qcwa1u" path="res://UI/term_interface.tscn" id="7_ehkex"]
+[ext_resource type="Script" uid="uid://dypx4p2nactij" path="res://UI/ui_control.gd" id="7_mfdv2"]
+[ext_resource type="Script" uid="uid://ccnxjhg3qg8bp" path="res://inventory/UI/inventory_interface.gd" id="8_hve3p"]
+[ext_resource type="PackedScene" uid="uid://clxv6ocntkd22" path="res://inventory/UI/inventory.tscn" id="9_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://lrx6o77k5qgs" path="res://inventory/UI/slot.tscn" id="10_iotsf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g14j6"]
 texture = ExtResource("1_ppyta")
@@ -184,9 +188,29 @@ script = ExtResource("3_6uqi0")
 zoom = Vector2(2, 2)
 
 [node name="UiControl" parent="." instance=ExtResource("6_g14j6")]
+script = ExtResource("7_mfdv2")
 
-[node name="term_interface" parent="UiControl" instance=ExtResource("7_ehkex")]
+[node name="TermInterface" parent="UiControl" instance=ExtResource("7_ehkex")]
 offset_right = 0.0
 offset_bottom = 0.0
 
-[editable path="UiControl/term_interface"]
+[node name="InventoryInterface" type="Control" parent="UiControl"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_hve3p")
+
+[node name="PlayerInventory" parent="UiControl/InventoryInterface" instance=ExtResource("9_mfdv2")]
+layout_mode = 0
+anchors_preset = 0
+
+[node name="GrabbedSlot" parent="UiControl/InventoryInterface" instance=ExtResource("10_iotsf")]
+visible = false
+layout_mode = 0
+
+[connection signal="gui_input" from="UiControl/InventoryInterface" to="UiControl/InventoryInterface" method="_on_gui_input"]
+[connection signal="visibility_changed" from="UiControl/InventoryInterface" to="UiControl/InventoryInterface" method="_on_visibility_changed"]
+
+[editable path="UiControl/TermInterface"]

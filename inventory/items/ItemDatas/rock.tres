@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dcd5hytyfnsf0"]
+
+[ext_resource type="Script" uid="uid://dlcjqlliw4ngk" path="res://Systems/inventory/items/item_data.gd" id="1_n8qg2"]
+[ext_resource type="Texture2D" uid="uid://dnya2jpsn36w3" path="res://Systems/inventory/items/test_items.png" id="2_2743u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mke2"]
+atlas = ExtResource("2_2743u")
+region = Rect2(32, 80, 16, 16)
+
+[resource]
+script = ExtResource("1_n8qg2")
+name = "Rock"
+description = "Fits nicely in the palm"
+stackable = true
+texture = SubResource("AtlasTexture_1mke2")

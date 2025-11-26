@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=4 format=3 uid="uid://b5sns10ub48f5"]
+
+[ext_resource type="Script" uid="uid://b6oe5tpwpk0k5" path="res://Systems/inventory/items/item_data_consumable.gd" id="1_g8r7x"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3ama5"]
+load_path = "res://.godot/imported/test_items.png-2cf77065ec40b44a4d2a4ca58ba3c3e8.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxtan"]
+atlas = SubResource("CompressedTexture2D_3ama5")
+region = Rect2(96, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_g8r7x")
+heal_value = 1
+name = "Milk Jar"
+description = "milkk"
+stackable = true
+texture = SubResource("AtlasTexture_xxtan")

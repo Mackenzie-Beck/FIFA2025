@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://b2v6qt1lqpqe6"]
+
+[ext_resource type="Script" uid="uid://dlcjqlliw4ngk" path="res://Systems/inventory/items/item_data.gd" id="1_xivey"]
+[ext_resource type="Texture2D" uid="uid://dnya2jpsn36w3" path="res://Systems/inventory/items/test_items.png" id="2_mwia7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g1vn"]
+atlas = ExtResource("2_mwia7")
+region = Rect2(64, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_xivey")
+name = "Jar empty"
+description = "But it could be full"
+stackable = false
+texture = SubResource("AtlasTexture_3g1vn")

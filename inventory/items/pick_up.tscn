@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ia4up4xffyii"]
+
+[ext_resource type="Script" uid="uid://dvfmcynhkaa1p" path="res://Systems/inventory/items/pick_up.gd" id="1_4am6a"]
+[ext_resource type="Texture2D" uid="uid://rdyd83xhme05" path="res://Systems/inventory/items/test_items.tres" id="1_yxr0x"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y7btn"]
+radius = 0.137461
+
+[node name="PickUp" type="RigidBody3D"]
+collision_layer = 0
+lock_rotation = true
+script = ExtResource("1_4am6a")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("1_yxr0x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_y7btn")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_y7btn")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

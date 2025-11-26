@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var term_interface: Control = $UiControl/term_interface
+@onready var term_interface: Control = $UiControl/TermInterface
 @onready var object_layer: TileMapLayer = $ObjectLayer
 
 
