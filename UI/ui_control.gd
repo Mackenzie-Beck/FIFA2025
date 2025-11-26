@@ -5,9 +5,9 @@ extends CanvasLayer
 
 # inventory functions ---------------------------------------------------------
 
-func set_player_inventory_data(inventory_data: InventoryData, player: CharacterBody3D) -> void:
+func set_player_inventory_data(inventory_data: InventoryData) -> void:
 	#print("set player inventory data")
-	inventory_interface.set_player_inventory_data(inventory_data, player)
+	inventory_interface.set_player_inventory_data(inventory_data)
 	
 
 func toggle_inventory(external_inventory_owner = null):

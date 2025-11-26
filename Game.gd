@@ -9,7 +9,7 @@ func _ready() -> void:
 	
 	QuestionBank.load_questions_from_csv("res://data/test_data.txt", true)
 	
-	
+	UI_control.set_player_inventory_data(PlayerManager.inventory_data)
 	
 	
 	var question = QuestionBank.random_question()

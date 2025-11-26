@@ -2,7 +2,7 @@ extends Node
 
 var health = 5
 
-var inventory_data : InventoryData
+var inventory_data : InventoryData = preload("res://Player/player_inventory.tres")
 
 
 func _physics_process(delta: float) -> void:

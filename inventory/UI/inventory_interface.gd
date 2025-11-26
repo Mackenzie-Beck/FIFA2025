@@ -14,7 +14,7 @@ func _physics_process(delta) ->void:
 	if grabbed_slot and grabbed_slot.visible:
 		grabbed_slot.global_position = get_global_mouse_position() + Vector2(5,5)
 
-func set_player_inventory_data(inventory_data: InventoryData, player : CharacterBody3D) -> void:
+func set_player_inventory_data(inventory_data: InventoryData) -> void:
 	if !inventory_data.inventory_interact.is_connected(on_inventory_interact):
 		inventory_data.inventory_interact.connect(on_inventory_interact)
 		player_inventory.set_inventory_data(inventory_data)

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://byb8avg82nfyl"]
 
-[ext_resource type="Script" uid="uid://dlcjqlliw4ngk" path="res://Systems/inventory/items/item_data.gd" id="1_3d2ga"]
-[ext_resource type="Texture2D" uid="uid://dnya2jpsn36w3" path="res://Systems/inventory/items/test_items.png" id="2_pqi6v"]
+[ext_resource type="Script" uid="uid://dlcjqlliw4ngk" path="res://inventory/items/item_data.gd" id="1_3d2ga"]
+[ext_resource type="Texture2D" uid="uid://dnya2jpsn36w3" path="res://inventory/items/test_items.png" id="2_pqi6v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3k8xf"]
 atlas = ExtResource("2_pqi6v")
@@ -11,5 +11,4 @@ region = Rect2(32, 0, 16, 16)
 script = ExtResource("1_3d2ga")
 name = "Axe"
 description = "A sturdy but aged tool."
-stackable = false
 texture = SubResource("AtlasTexture_3k8xf")
