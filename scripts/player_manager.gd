@@ -5,6 +5,11 @@ var health = 5
 var inventory_data : InventoryData
 
 
+func _physics_process(delta: float) -> void:
+	# can put input scanning for player here
+	if Input.is_action_just_pressed("inventory"):
+		UI_control.toggle_inventory()
+	
 
 
 func use_slot_data(slot_data: SlotData) -> void:

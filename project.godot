@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 Utils="*res://scripts/Utils.gd"
 QuestionBank="*res://scripts/QuestionBank.gd"
+PlayerManager="*res://scripts/player_manager.gd"
+UI_control="*res://UI/UIControl.tscn"
 
 [input]
 

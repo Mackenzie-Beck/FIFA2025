@@ -1,3 +1,42 @@
-[gd_scene format=3 uid="uid://duignnm2r588y"]
+[gd_scene load_steps=6 format=3 uid="uid://duignnm2r588y"]
+
+[ext_resource type="PackedScene" uid="uid://od4j47qcwa1u" path="res://UI/term_interface.tscn" id="1_1s14l"]
+[ext_resource type="Script" uid="uid://dypx4p2nactij" path="res://UI/ui_control.gd" id="1_75ywj"]
+[ext_resource type="Script" uid="uid://ccnxjhg3qg8bp" path="res://inventory/UI/inventory_interface.gd" id="2_75ywj"]
+[ext_resource type="PackedScene" uid="uid://clxv6ocntkd22" path="res://inventory/UI/inventory.tscn" id="3_ypktx"]
+[ext_resource type="PackedScene" uid="uid://lrx6o77k5qgs" path="res://inventory/UI/slot.tscn" id="4_5x5ms"]
 
 [node name="UiControl" type="CanvasLayer"]
+script = ExtResource("1_75ywj")
+
+[node name="TermInterface" parent="." instance=ExtResource("1_1s14l")]
+visible = false
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="InventoryInterface" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_75ywj")
+
+[node name="PlayerInventory" parent="InventoryInterface" instance=ExtResource("3_ypktx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="GrabbedSlot" parent="InventoryInterface" instance=ExtResource("4_5x5ms")]
+visible = false
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[connection signal="gui_input" from="InventoryInterface" to="InventoryInterface" method="_on_gui_input"]
+[connection signal="visibility_changed" from="InventoryInterface" to="InventoryInterface" method="_on_visibility_changed"]
+
+[editable path="TermInterface"]

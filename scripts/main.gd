@@ -18,9 +18,12 @@ func _on_start_game():
 	for child in get_children():
 		child.queue_free()
 	
+	
+
 	# Wait for the next frame so children are actually removed
 	await get_tree().process_frame
 
 	
 	var new_game = GAME.instantiate()
 	add_child(new_game)
+	UI_control.toggle_term_interface()
