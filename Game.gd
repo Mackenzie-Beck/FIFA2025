@@ -16,8 +16,3 @@ func _ready() -> void:
 	UI_control.term_interface.set_term_set(question[0], question[1])
 	UI_control.term_interface.set_equation_template(question[0], question[1])
 	object_layer.initialize_game_world(question[0])
-
-
-
-func is_equation_correct() -> bool:
-	return UI_control.term_interface.is_equation_correct()

@@ -118,7 +118,7 @@ func draw_line_on_grid(equation : String) -> void:
 		line.add_point(map_to_local(point))  
 	
 	line.width = 2
-	if get_parent().is_equation_correct():
+	if UI_control.term_interface.is_equation_correct():
 		line.default_color = Color.WEB_GREEN
 	else:
 		line.default_color = Color.DARK_RED
