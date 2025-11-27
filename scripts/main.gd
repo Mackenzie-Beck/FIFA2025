@@ -15,7 +15,6 @@ func _ready() -> void:
 
 
 func _on_start_game():
-	
 	if QuestionBank.questions.is_empty():
 		print("No questions!")
 		return
@@ -29,3 +28,4 @@ func _on_start_game():
 	
 	var new_game = GAME.instantiate()
 	add_child(new_game)
+	UI_control.toggle_term_interface()

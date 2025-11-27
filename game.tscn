@@ -1,12 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://dho3caqnqcfoe"]
+[gd_scene load_steps=12 format=4 uid="uid://dho3caqnqcfoe"]
 
 [ext_resource type="Texture2D" uid="uid://cdqinggdu1oy1" path="res://SpriteSheet.png" id="1_8uh7m"]
 [ext_resource type="Script" uid="uid://dye5di3bv3jcr" path="res://Game.gd" id="1_g14j6"]
 [ext_resource type="Texture2D" uid="uid://cyqstfclcc0ku" path="res://Palette_alt.png" id="1_ppyta"]
 [ext_resource type="Texture2D" uid="uid://5h2dpmse3gd3" path="res://Palette.png" id="2_6uqi0"]
 [ext_resource type="Script" uid="uid://cp7s6sg8n625o" path="res://object_layer.gd" id="3_6uqi0"]
-[ext_resource type="PackedScene" uid="uid://duignnm2r588y" path="res://UI/UIControl.tscn" id="6_g14j6"]
-[ext_resource type="PackedScene" uid="uid://od4j47qcwa1u" path="res://UI/term_interface.tscn" id="7_ehkex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g14j6"]
 texture = ExtResource("1_ppyta")
@@ -182,11 +180,3 @@ script = ExtResource("3_6uqi0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
-
-[node name="UiControl" parent="." instance=ExtResource("6_g14j6")]
-
-[node name="term_interface" parent="UiControl" instance=ExtResource("7_ehkex")]
-offset_right = 0.0
-offset_bottom = 0.0
-
-[editable path="UiControl/term_interface"]
