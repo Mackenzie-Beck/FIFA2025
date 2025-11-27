@@ -15,6 +15,11 @@ func _ready() -> void:
 
 
 func _on_start_game():
+	
+	if QuestionBank.questions.is_empty():
+		print("No questions!")
+		return
+	
 	for child in get_children():
 		child.queue_free()
 	
