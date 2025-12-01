@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://eudwmbyt0eji"
+path="res://.godot/imported/SciFi_Robot_1.mp3-1a7ae889b77697a372f026d99f27bf05.mp3str"
+
+[deps]
+
+source_file="res://Assets/OneDrive_1_11-30-2025/Sci-Fi User Interface Sounds - Universal Sound Effects/MP3/SciFi_Robot_1.mp3"
+dest_files=["res://.godot/imported/SciFi_Robot_1.mp3-1a7ae889b77697a372f026d99f27bf05.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

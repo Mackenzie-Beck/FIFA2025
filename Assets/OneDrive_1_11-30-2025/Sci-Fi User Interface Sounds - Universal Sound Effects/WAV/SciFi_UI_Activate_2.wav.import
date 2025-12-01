@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bkn0g7dv18h1j"
+path="res://.godot/imported/SciFi_UI_Activate_2.wav-3b8fb160bd31f2507d951bf9f9d45af4.sample"
+
+[deps]
+
+source_file="res://Assets/OneDrive_1_11-30-2025/Sci-Fi User Interface Sounds - Universal Sound Effects/WAV/SciFi_UI_Activate_2.wav"
+dest_files=["res://.godot/imported/SciFi_UI_Activate_2.wav-3b8fb160bd31f2507d951bf9f9d45af4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

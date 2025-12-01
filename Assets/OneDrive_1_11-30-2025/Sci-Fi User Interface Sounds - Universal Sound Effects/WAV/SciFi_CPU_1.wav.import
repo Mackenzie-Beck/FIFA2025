@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://skp6bh7658ei"
+path="res://.godot/imported/SciFi_CPU_1.wav-bf3afc9c0338e0dac43a2a8b42726488.sample"
+
+[deps]
+
+source_file="res://Assets/OneDrive_1_11-30-2025/Sci-Fi User Interface Sounds - Universal Sound Effects/WAV/SciFi_CPU_1.wav"
+dest_files=["res://.godot/imported/SciFi_CPU_1.wav-bf3afc9c0338e0dac43a2a8b42726488.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
