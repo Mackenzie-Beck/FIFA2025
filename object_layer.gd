@@ -124,6 +124,20 @@ func draw_line_on_grid(equation : String) -> void:
 		line.default_color = Color.DARK_RED
 	add_child(line)
 
+func reset_grid() -> void:
+	var used_rect = get_used_rect()
+	
+	var tile_source_id = 0
+	var tile_atlas_coords = Vector2i(0, 0)
+	var tile_layer = 0
+	
+	# Loop through every cell in the used rectangle
+	for x in range(used_rect.position.x, used_rect.position.x + used_rect.size.x):
+		for y in range(used_rect.position.y, used_rect.position.y + used_rect.size.y):
+			print(x,y)
+			set_cell(Vector2i(x, y), tile_source_id, tile_atlas_coords)
+
+		notify_runtime_tile_data_update()  # Force redraw
 
 func clear_board_state():
 	clear_lines_on_grid()
@@ -131,6 +145,8 @@ func clear_board_state():
 	set_cell(player_coords, -1)
 	#goal
 	set_cell(goal_coords, -1)
+	reset_grid()
+
 
 func _on_update_equation(equation :String):
 	clear_board_state()
