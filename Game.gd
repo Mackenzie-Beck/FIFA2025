@@ -3,6 +3,7 @@ extends Node2D
 
 
 @onready var object_layer: TileMapLayer = $ObjectLayer
+@onready var background: Sprite2D = $Background
 
 
 func _ready() -> void:

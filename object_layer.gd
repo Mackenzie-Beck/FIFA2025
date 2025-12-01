@@ -35,7 +35,7 @@ func initialize_game_world(equation :String):
 	
 	set_player_coords(Vector2(player_x_coord, -expression.execute([player_x_coord])))
 	set_goal_coords(Vector2((player_x_coord+goal_offset), -expression.execute([player_x_coord+goal_offset]) ) )
-	
+	print("player coord at: ",player_x_coord, " ", expression.execute([player_x_coord])  )
 	
 	if !Utils.update_line.is_connected(draw_line_on_grid):
 		Utils.update_line.connect(draw_line_on_grid)

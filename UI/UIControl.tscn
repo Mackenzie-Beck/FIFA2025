@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://duignnm2r588y"]
+[gd_scene load_steps=4 format=3 uid="uid://duignnm2r588y"]
 
 [ext_resource type="PackedScene" uid="uid://od4j47qcwa1u" path="res://UI/term_interface.tscn" id="1_1s14l"]
 [ext_resource type="Script" uid="uid://dqdxegdurqi3t" path="res://UI/ui_control.gd" id="1_75ywj"]
+[ext_resource type="PackedScene" uid="uid://c4o3jk0ng75qx" path="res://UI/main_menu.tscn" id="4_1s14l"]
 
 [node name="UiControl" type="CanvasLayer"]
 script = ExtResource("1_75ywj")
@@ -10,5 +11,7 @@ script = ExtResource("1_75ywj")
 visible = false
 offset_right = 0.0
 offset_bottom = 0.0
+
+[node name="Main_Menu" parent="." instance=ExtResource("4_1s14l")]
 
 [editable path="term_interface"]

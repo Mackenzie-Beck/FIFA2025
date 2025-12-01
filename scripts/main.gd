@@ -3,15 +3,12 @@ extends Node
 
 
 const GAME = preload("uid://dho3caqnqcfoe")
-@onready var main_menu: Control = $Main_Menu
-
-
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	main_menu.start_game.connect(_on_start_game)
+	UI_control.main_menu.start_game.connect(_on_start_game)
 
 
 func _on_start_game():
