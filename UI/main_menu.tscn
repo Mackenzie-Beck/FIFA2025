@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4o3jk0ng75qx"]
+[gd_scene load_steps=5 format=3 uid="uid://c4o3jk0ng75qx"]
 
+[ext_resource type="Theme" uid="uid://c0re1bitbft18" path="res://Assets/OneDrive_1_11-30-2025/sci-fi-theme-4/sci-fi-theme.tres" id="1_4cwpn"]
 [ext_resource type="Script" uid="uid://d1t3wlkq0cn6s" path="res://UI/main_menu.gd" id="1_p8ccj"]
 [ext_resource type="Texture2D" uid="uid://cwcito53ajxo3" path="res://Assets/OneDrive_1_11-30-2025/SpaceBg/Backgrounds/Purple2.png" id="2_tk8dj"]
 [ext_resource type="Texture2D" uid="uid://xuyk5els740h" path="res://Assets/OneDrive_1_11-30-2025/SpaceBg/Backgrounds/YellowStars.png" id="3_d8nwk"]
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_4cwpn")
 script = ExtResource("1_p8ccj")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
