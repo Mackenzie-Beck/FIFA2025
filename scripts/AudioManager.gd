@@ -15,9 +15,24 @@ var sound_effect_dict: Dictionary = {} ## Loads all registered SoundEffects on r
 func _ready() -> void:
 	for sound_effect: SoundEffect in sound_effects:
 		sound_effect_dict[sound_effect.type] = sound_effect
+	
+	  # Find all buttons in the scene tree
+	get_tree().connect("node_added", _on_node_added)
+	
+	# Connect existing buttons
+	for button in get_tree().get_nodes_in_group("ui_buttons"):
+		_connect_button(button)
 
+func _on_node_added(node):
+	if node is Button:
+		_connect_button(node)
 
+func _connect_button(button: Button):
+	if not button.pressed.is_connected(_play_button_sound):
+		button.pressed.connect(_play_button_sound)
 
+func _play_button_sound():
+	pass
 
 ## Creates a sound effect at a specific location if the limit has not been reached. Pass [param location] for the global position of the audio effect, and [param type] for the SoundEffect to be queued.
 func create_2d_audio_at_location(location: Vector2, type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
