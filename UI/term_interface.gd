@@ -130,8 +130,10 @@ func set_correct_equation(string : String):
 
 func skip_equation():
 	if Utils.points <= 1:
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.ROBOTIC_3)
 		return
 	else:
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_BUTTON_4)
 		Utils.points -= 2
 		points.text = str(Utils.points)
 		new_question()

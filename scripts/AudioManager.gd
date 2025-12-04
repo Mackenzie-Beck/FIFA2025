@@ -25,14 +25,24 @@ func _ready() -> void:
 
 func _on_node_added(node):
 	if node is Button:
+		print(node, " added")
 		_connect_button(node)
 
 func _connect_button(button: Button):
 	if not button.pressed.is_connected(_play_button_sound):
-		button.pressed.connect(_play_button_sound)
+		button.pressed.connect(_play_button_sound.bind(button))
 
-func _play_button_sound():
-	pass
+func _play_button_sound(button: Button):
+	if button.is_in_group("ui_button_1"):
+		create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_BUTTON_1)
+	elif button.is_in_group("ui_button_2"):
+		create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_BUTTON_2)
+	elif button.is_in_group("ui_button_3"):
+		create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_BUTTON_3)
+	elif button.is_in_group("ui_button_4"):
+		create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_BUTTON_4)
+	else:
+		create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_BUTTON_1)
 
 ## Creates a sound effect at a specific location if the limit has not been reached. Pass [param location] for the global position of the audio effect, and [param type] for the SoundEffect to be queued.
 func create_2d_audio_at_location(location: Vector2, type: SoundEffect.SOUND_EFFECT_TYPE) -> void:

@@ -41,11 +41,11 @@ layout_mode = 2
 text = "Main Menu"
 horizontal_alignment = 1
 
-[node name="Play" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Play" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 layout_mode = 2
 text = "Play"
 
-[node name="Load_csv" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Load_csv" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 layout_mode = 2
 text = "Load CSV"
 

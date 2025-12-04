@@ -9,6 +9,11 @@ extends CanvasLayer
 func _ready() -> void:
 	main_menu.start_game.connect(_on_start_game)
 	
+	for child in get_children(true):
+		if child is Button:
+			print("test")
+			AudioManager._connect_button(child)
+	
 
 func toggle_term_interface() -> void:
 	term_interface.visible = !term_interface.visible
