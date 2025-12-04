@@ -4,10 +4,32 @@ extends Resource
 
 ## Stores the different types of sounds effects available to be played to distinguish them from another. Each new SoundEffect resource created should add to this enum, to allow them to be easily instantiated via [method AudioManager.create_2d_audio_at_location()] and [method AudioManager.create_audio()].
 enum SOUND_EFFECT_TYPE {
-	FOOTSTEPS_DIRT_1,
-	FOOTSTEPS_DIRT_2,
-	FOOTSTEPS_DIRT_3,
-	FOOTSTEPS_DIRT_4
+	UI_BUTTON_1,
+	UI_BUTTON_2,
+	UI_BUTTON_3,
+	UI_BUTTON_4,
+	UI_ACTIVATE_1,
+	UI_ACTIVATE_2,
+	UI_ACTIVATE_3,
+	UI_CONSOLE_1,
+	UI_CONSOLE_2,
+	UI_CONSOLE_3,
+	UI_CONSOLE_4,
+	UI_CONSOLE_5,
+	CONSOLE_1,
+	CONSOLE_2,
+	CPU_1,
+	CPU_2,
+	CPU_3,
+	CPU_4,
+	CPU_5,
+	ROBOT_1,
+	ROBOT_2,
+	ROBOTIC_1,
+	ROBOTIC_2,
+	ROBOTIC_3,
+	ROBOTIC_4,
+	ROBOTIC_5
 }
 
 @export_range(0, 10) var limit: int = 5 ## Maximum number of this SoundEffect to play simultaneously before culled.
