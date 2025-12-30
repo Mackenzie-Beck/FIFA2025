@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/The Beginning.ogg-4b9346fb11719ae75f6635582ca
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

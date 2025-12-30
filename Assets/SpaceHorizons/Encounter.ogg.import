@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Encounter.ogg-add85ce1f65ba283052f8ab9a938288
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

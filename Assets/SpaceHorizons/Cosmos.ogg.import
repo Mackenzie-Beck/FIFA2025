@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Cosmos.ogg-7e3d87911459a867bef652a30fcb3889.o
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

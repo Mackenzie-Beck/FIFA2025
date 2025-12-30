@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/The Sun.ogg-0324dd7d2fb48dd986e4f0ba527417f6.
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
