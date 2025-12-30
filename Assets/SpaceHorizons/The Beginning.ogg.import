@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://77e2akjg37jo"
+path="res://.godot/imported/The Beginning.ogg-4b9346fb11719ae75f6635582cabdc58.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/SpaceHorizons/The Beginning.ogg"
+dest_files=["res://.godot/imported/The Beginning.ogg-4b9346fb11719ae75f6635582cabdc58.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

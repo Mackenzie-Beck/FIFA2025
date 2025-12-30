@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bamwqj2ruludv"]
+[gd_scene load_steps=73 format=3 uid="uid://bamwqj2ruludv"]
 
 [ext_resource type="Script" uid="uid://1d105tat71ot" path="res://scripts/AudioManager.gd" id="1_2nh25"]
 [ext_resource type="Script" uid="uid://chsadfdiewgf5" path="res://Resources/SoundEffectSettings.gd" id="2_wda1a"]
@@ -28,6 +28,15 @@
 [ext_resource type="AudioStream" uid="uid://cis23p7aoay1s" path="res://Assets/OneDrive_1_11-30-2025/Sci-Fi User Interface Sounds - Universal Sound Effects/OGG/SciFi_Robotic_3.ogg" id="26_58uhc"]
 [ext_resource type="AudioStream" uid="uid://cpubo0cq5i7x4" path="res://Assets/OneDrive_1_11-30-2025/Sci-Fi User Interface Sounds - Universal Sound Effects/OGG/SciFi_Robotic_4.ogg" id="27_1pxdu"]
 [ext_resource type="AudioStream" uid="uid://b3x3ph8t3rks1" path="res://Assets/OneDrive_1_11-30-2025/Sci-Fi User Interface Sounds - Universal Sound Effects/OGG/SciFi_Robotic_5.ogg" id="28_1btnt"]
+[ext_resource type="AudioStream" uid="uid://dia6iws6anx1e" path="res://Assets/SpaceHorizons/Black Hole.ogg" id="29_ueqd4"]
+[ext_resource type="AudioStream" uid="uid://cog6ck0jolwfc" path="res://Assets/SpaceHorizons/Cosmos.ogg" id="30_ib212"]
+[ext_resource type="AudioStream" uid="uid://bb1d4rfg2erii" path="res://Assets/SpaceHorizons/Encounter.ogg" id="31_kdyvn"]
+[ext_resource type="AudioStream" uid="uid://b2kl64sg4mayy" path="res://Assets/SpaceHorizons/Home.ogg" id="32_bs6ow"]
+[ext_resource type="AudioStream" uid="uid://bguqus72jdd8w" path="res://Assets/SpaceHorizons/Meteor.ogg" id="33_80778"]
+[ext_resource type="AudioStream" uid="uid://bi7i1erqlbcfb" path="res://Assets/SpaceHorizons/Nebula.ogg" id="34_kpns8"]
+[ext_resource type="AudioStream" uid="uid://77e2akjg37jo" path="res://Assets/SpaceHorizons/The Beginning.ogg" id="35_vjybs"]
+[ext_resource type="AudioStream" uid="uid://cfxu4feuajiyt" path="res://Assets/SpaceHorizons/The End.ogg" id="36_gdhst"]
+[ext_resource type="AudioStream" uid="uid://c4o7jr5hsu5m4" path="res://Assets/SpaceHorizons/The Sun.ogg" id="37_qqn18"]
 
 [sub_resource type="Resource" id="Resource_yjd6q"]
 script = ExtResource("2_wda1a")
@@ -184,6 +193,60 @@ type = 25
 sound_effect = ExtResource("28_1btnt")
 metadata/_custom_type_script = "uid://chsadfdiewgf5"
 
+[sub_resource type="Resource" id="Resource_n8yw5"]
+script = ExtResource("2_wda1a")
+type = 26
+sound_effect = ExtResource("29_ueqd4")
+metadata/_custom_type_script = "uid://chsadfdiewgf5"
+
+[sub_resource type="Resource" id="Resource_fcvws"]
+script = ExtResource("2_wda1a")
+type = 27
+sound_effect = ExtResource("30_ib212")
+metadata/_custom_type_script = "uid://chsadfdiewgf5"
+
+[sub_resource type="Resource" id="Resource_sstbs"]
+script = ExtResource("2_wda1a")
+type = 28
+sound_effect = ExtResource("31_kdyvn")
+metadata/_custom_type_script = "uid://chsadfdiewgf5"
+
+[sub_resource type="Resource" id="Resource_ijxcu"]
+script = ExtResource("2_wda1a")
+type = 29
+sound_effect = ExtResource("32_bs6ow")
+metadata/_custom_type_script = "uid://chsadfdiewgf5"
+
+[sub_resource type="Resource" id="Resource_b6gg3"]
+script = ExtResource("2_wda1a")
+type = 30
+sound_effect = ExtResource("33_80778")
+metadata/_custom_type_script = "uid://chsadfdiewgf5"
+
+[sub_resource type="Resource" id="Resource_tmjfi"]
+script = ExtResource("2_wda1a")
+type = 31
+sound_effect = ExtResource("34_kpns8")
+metadata/_custom_type_script = "uid://chsadfdiewgf5"
+
+[sub_resource type="Resource" id="Resource_ujj0e"]
+script = ExtResource("2_wda1a")
+type = 32
+sound_effect = ExtResource("35_vjybs")
+metadata/_custom_type_script = "uid://chsadfdiewgf5"
+
+[sub_resource type="Resource" id="Resource_yrfip"]
+script = ExtResource("2_wda1a")
+type = 33
+sound_effect = ExtResource("36_gdhst")
+metadata/_custom_type_script = "uid://chsadfdiewgf5"
+
+[sub_resource type="Resource" id="Resource_7iifm"]
+script = ExtResource("2_wda1a")
+type = 34
+sound_effect = ExtResource("37_qqn18")
+metadata/_custom_type_script = "uid://chsadfdiewgf5"
+
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_2nh25")
-sound_effects = Array[ExtResource("2_wda1a")]([SubResource("Resource_yjd6q"), SubResource("Resource_udwei"), SubResource("Resource_58b0s"), SubResource("Resource_dxjv2"), SubResource("Resource_mev0m"), SubResource("Resource_7oxt7"), SubResource("Resource_o4sf7"), SubResource("Resource_fget0"), SubResource("Resource_r4vh4"), SubResource("Resource_5uxs8"), SubResource("Resource_dh53w"), SubResource("Resource_lkvy2"), SubResource("Resource_3kt5d"), SubResource("Resource_j3vhd"), SubResource("Resource_dxymw"), SubResource("Resource_whmke"), SubResource("Resource_twbxx"), SubResource("Resource_lr2ip"), SubResource("Resource_58uhc"), SubResource("Resource_4e8qr"), SubResource("Resource_1pxdu"), SubResource("Resource_611gl"), SubResource("Resource_2576e"), SubResource("Resource_kd3se"), SubResource("Resource_x0a5h"), SubResource("Resource_ueqd4")])
+sound_effects = Array[ExtResource("2_wda1a")]([SubResource("Resource_yjd6q"), SubResource("Resource_udwei"), SubResource("Resource_58b0s"), SubResource("Resource_dxjv2"), SubResource("Resource_mev0m"), SubResource("Resource_7oxt7"), SubResource("Resource_o4sf7"), SubResource("Resource_fget0"), SubResource("Resource_r4vh4"), SubResource("Resource_5uxs8"), SubResource("Resource_dh53w"), SubResource("Resource_lkvy2"), SubResource("Resource_3kt5d"), SubResource("Resource_j3vhd"), SubResource("Resource_dxymw"), SubResource("Resource_whmke"), SubResource("Resource_twbxx"), SubResource("Resource_lr2ip"), SubResource("Resource_58uhc"), SubResource("Resource_4e8qr"), SubResource("Resource_1pxdu"), SubResource("Resource_611gl"), SubResource("Resource_2576e"), SubResource("Resource_kd3se"), SubResource("Resource_x0a5h"), SubResource("Resource_ueqd4"), SubResource("Resource_n8yw5"), SubResource("Resource_fcvws"), SubResource("Resource_sstbs"), SubResource("Resource_ijxcu"), SubResource("Resource_b6gg3"), SubResource("Resource_tmjfi"), SubResource("Resource_ujj0e"), SubResource("Resource_yrfip"), SubResource("Resource_7iifm")])

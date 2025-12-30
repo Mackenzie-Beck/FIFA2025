@@ -20,3 +20,5 @@ func toggle_term_interface() -> void:
 
 func _on_start_game() -> void:
 	main_menu.visible = !main_menu.visible
+	Utils.points = Utils.rng.randi_range(2,4)
+	term_interface.set_points()

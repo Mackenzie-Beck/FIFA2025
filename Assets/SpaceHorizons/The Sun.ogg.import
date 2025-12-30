@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4o7jr5hsu5m4"
+path="res://.godot/imported/The Sun.ogg-0324dd7d2fb48dd986e4f0ba527417f6.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/SpaceHorizons/The Sun.ogg"
+dest_files=["res://.godot/imported/The Sun.ogg-0324dd7d2fb48dd986e4f0ba527417f6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

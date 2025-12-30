@@ -29,7 +29,17 @@ enum SOUND_EFFECT_TYPE {
 	ROBOTIC_2,
 	ROBOTIC_3,
 	ROBOTIC_4,
-	ROBOTIC_5
+	ROBOTIC_5,
+	BLACK_HOLE,
+	COSMOS,
+	ENCOUNTER,
+	HOME,
+	METEOR,
+	NEBULA,
+	THE_BEGINNING,
+	THE_END,
+	THE_SUN,
+	THE_VOID
 }
 
 @export_range(0, 10) var limit: int = 5 ## Maximum number of this SoundEffect to play simultaneously before culled.
