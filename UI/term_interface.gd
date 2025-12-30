@@ -5,7 +5,7 @@ extends Control
 @onready var equation_template: EquationTemplate = $EquationTemplate
 @onready var term_set: PanelContainer = $TermSet
 @onready var grabbed_term: Term = $GrabbedTerm
-@onready var points: Label = $PanelContainer/VBoxContainer/Points
+@onready var points: Label = $PanelContainer/VBoxContainer/HBoxContainer/Points
 
 
 var correct_equation : String

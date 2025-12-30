@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://od4j47qcwa1u"]
+[gd_scene load_steps=7 format=3 uid="uid://od4j47qcwa1u"]
 
 [ext_resource type="Theme" uid="uid://c0re1bitbft18" path="res://Assets/OneDrive_1_11-30-2025/sci-fi-theme-4/sci-fi-theme.tres" id="1_e7p5o"]
 [ext_resource type="PackedScene" uid="uid://ru6bbeux7da8" path="res://UI/equation_template.tscn" id="1_idjym"]
 [ext_resource type="Script" uid="uid://cemjpy4nofsvi" path="res://UI/term_interface.gd" id="1_xrx8h"]
 [ext_resource type="PackedScene" uid="uid://bapulckg3ghva" path="res://UI/term_set.tscn" id="3_d25r2"]
 [ext_resource type="PackedScene" uid="uid://c3lam4sdf8qcb" path="res://UI/term.tscn" id="4_efsp5"]
+[ext_resource type="Texture2D" uid="uid://bq7pwwhwj3jua" path="res://Assets/OneDrive_1_11-30-2025/Resources-for-Cyberpunk-Topic-Pixel-Art-32x32-Icon-Pack/1 Icons/Icon6_13.png" id="6_q55ty"]
 
 [node name="term_interface" type="Control"]
 layout_mode = 3
@@ -49,7 +50,15 @@ layout_mode = 2
 layout_mode = 2
 text = "Current Score:"
 
-[node name="Points" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Points" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "0"
 horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_q55ty")
