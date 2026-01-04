@@ -11,7 +11,6 @@ func _ready() -> void:
 	
 	for child in get_children(true):
 		if child is Button:
-			print("test")
 			AudioManager._connect_button(child)
 	
 

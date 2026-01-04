@@ -6,6 +6,9 @@ const GAME = preload("uid://dho3caqnqcfoe")
 
 
 
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	UI_control.main_menu.start_game.connect(_on_start_game)
@@ -13,7 +16,6 @@ func _ready() -> void:
 
 func _on_start_game():
 	if QuestionBank.questions.is_empty():
-		print("No questions!")
 		return
 	
 	for child in get_children():

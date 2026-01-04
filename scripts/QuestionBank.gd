@@ -2,6 +2,15 @@ extends Node
 
 
 var questions = {
+"y=x+3" : 5,
+"y=2*x-5":	7,
+"y=-3*x+7":	8,
+"y=4*x+0"	:7,
+"y=-x+2":6,
+"y=5*x+2":	7,
+"y=-x-8":	8,
+"y=x+1" :5,
+"y=3*x+4" :7
 
 }
 
@@ -11,7 +20,7 @@ func random_question() -> Array:
 	return [key, questions[key]]
 
 # Load questions from a CSV file
-func load_questions_from_csv(file_path: String, replace: bool = false) -> bool:
+func load_questions_from_csv(file_path: String, replace: bool = true) -> bool:
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	if file == null:
 		push_error("Failed to open file: " + file_path)
