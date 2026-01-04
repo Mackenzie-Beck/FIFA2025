@@ -63,17 +63,19 @@ func _equation_template_updated(index: int, button: int, term_text : String):
 				if grabbed_term.visible and equation_template.term_slots.get_child(index).term_label.text == "___":
 					equation_template.term_slots.get_child(index).set_term_text(grabbed_term.term_label.text)
 					grabbed_term.visible = !grabbed_term.visible
+					AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_ACTIVATE_3)
 				# replace a term with another
 				elif grabbed_term.visible and equation_template.term_slots.get_child(index).term_label.text != "___":
 					var tmptext = term_text
 					equation_template.term_slots.get_child(index).set_term_text(grabbed_term.term_label.text)
 					grabbed_term.term_label.text = tmptext
-					
+					AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_ACTIVATE_2)
 				#grab term from equation template 
 				elif !grabbed_term.visible and equation_template.term_slots.get_child(index).term_label.text != "___":
 					grabbed_term.visible = !grabbed_term.visible
 					grabbed_term.term_label.text = term_text
 					equation_template.set_term_slot(index, "___")
+					AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_ACTIVATE_1)
 					
 					
 		check_equation_correct()
@@ -87,10 +89,12 @@ func _on_term_set_updated(index:int, button: int, term_text : String):
 				grabbed_term.visible = !grabbed_term.visible
 				grabbed_term.term_label.text = term_text
 				term_set.set_term_slot(index, "___")
+				AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_ACTIVATE_1)
 				#player should not be able to place a term when there is another number in that slot
 			elif grabbed_term.visible and term_set.term_container.get_child(index).term_label.text == "___":
 				grabbed_term.visible = !grabbed_term.visible
 				term_set.set_term_slot(index, grabbed_term.term_label.text)
+				AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_ACTIVATE_3)
 				
 
 func is_equation_correct() -> bool:
