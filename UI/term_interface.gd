@@ -140,7 +140,7 @@ func skip_equation():
 
 func set_points():
 	points.text = str(Utils.points)
-	print("test set_points", " ", Utils.points)
+	#print("test set_points", " ", Utils.points)
 
 func new_question():
 	var question = QuestionBank.random_question()
