@@ -8,7 +8,8 @@ extends Control
 
 signal start_game
 
-
+func _ready() -> void:
+	Utils.play_music()
 
 
 func open_file_picker():

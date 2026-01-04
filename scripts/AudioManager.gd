@@ -81,3 +81,8 @@ func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 			new_audio.play()
 	else:
 		push_error("Audio Manager failed to find setting for type ", type)
+
+func stop_audios() -> void:
+	for child in get_children():
+		if child is AudioStreamPlayer:
+			child.stop()
