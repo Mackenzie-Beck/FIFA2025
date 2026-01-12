@@ -2,8 +2,7 @@ extends Node
 
 
 
-const GAME = preload("uid://dho3caqnqcfoe")
-
+const GAME = preload("res://game.tscn")
 
 
 
