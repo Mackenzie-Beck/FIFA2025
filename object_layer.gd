@@ -60,6 +60,14 @@ func clear_lines_on_grid():
 
 func draw_line_on_grid(equation : String) -> void:
 	
+	var _last_equation : String
+	 # Prevent duplicate calls
+	if equation == _last_equation:
+		return
+	_last_equation = equation
+	
+	
+	print("=== FUNCTION CALLED WITH: '", equation, "' ===")
 	# clean any lines
 	clear_lines_on_grid()
 			
@@ -72,11 +80,12 @@ func draw_line_on_grid(equation : String) -> void:
 	# check if the left had side of equaiton is correct
 	var equation_start = equation.substr(0,2)
 	if equation_start != "y=":
+		#print("EXITING: Wrong equation start")
 		#print("left hand side of equation is wrong")
 		return
 		
 	var cleaned_equation = equation.substr(2)
-	
+	#print("Cleaned equation: '", cleaned_equation, "'")
 		# Remove all _ characters
 	var result = ""
 	for i in range(cleaned_equation.length()):
@@ -91,8 +100,25 @@ func draw_line_on_grid(equation : String) -> void:
 	if error != 0:
 		print("Invalid equation format!")
 		print("Error: ", expression.get_error_text())
+		#print("EXITING: Invalid equation - ", expression.get_error_text())
 		return
-	
+		
+		
+	var regex = RegEx.new()
+	regex.compile("^[x0-9+\\-*/^().\\s]*$")  # Only allow x, numbers, and operators
+	if not regex.search(cleaned_equation):
+		print("EXITING: Invalid characters in equation")
+		return
+
+	# Also check for number immediately after x without operator
+	var implicit_mult = RegEx.new()
+	implicit_mult.compile("x[0-9]")
+	if implicit_mult.search(cleaned_equation):
+		print("EXITING: Use 'x*5' not 'x5'")
+		return
+		
+		
+	#print("Past the error check - equation is valid")
 	# If we get here, the equation is valid
 	#print("Equation is valid!")
 	
