@@ -8,6 +8,7 @@ const GAME = preload("res://game.tscn")
 
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	UI_control.main_menu.start_game.connect(_on_start_game)

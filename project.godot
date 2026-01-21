@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="FIFA2025"
-run/main_scene="uid://fl6iksvc6p14"
+run/main_scene="uid://b8rhaes58dnom"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
+AudioManager="*res://AudioManager.tscn"
 Utils="*res://scripts/Utils.gd"
 QuestionBank="*res://scripts/QuestionBank.gd"
-AudioManager="*res://AudioManager.tscn"
 UI_control="*res://UI/UIControl.tscn"
 
 [display]
