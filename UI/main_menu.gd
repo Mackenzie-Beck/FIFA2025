@@ -19,6 +19,7 @@ func open_file_picker():
 	file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 	file_dialog.access = FileDialog.ACCESS_RESOURCES
 	file_dialog.filters = ["*.csv ; CSV Files"]
+	file_dialog.current_dir = "res://data/"
 	
 	file_dialog.file_selected.connect(_on_file_selected)
 	file_dialog.canceled.connect(func(): file_dialog.queue_free())
